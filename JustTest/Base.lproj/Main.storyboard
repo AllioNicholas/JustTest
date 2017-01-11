@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parking Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ParkingMapViewController" customModule="JustTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5rA-X0-Cxx"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5rA-X0-Cxx" secondAttribute="bottom" id="2bR-dd-1CH"/>
+                            <constraint firstItem="5rA-X0-Cxx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Mgz-7v-M1g"/>
+                            <constraint firstItem="5rA-X0-Cxx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PBU-aR-mfw"/>
+                            <constraint firstAttribute="trailing" secondItem="5rA-X0-Cxx" secondAttribute="trailing" id="h7e-Qf-nAA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ATM-IM-vQO"/>
+                    <connections>
+                        <outlet property="map" destination="5rA-X0-Cxx" id="49b-Dy-STx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="137.18140929535232"/>
+        </scene>
+        <!--Parking Details View Controller-->
+        <scene sceneID="0WT-d0-915">
+            <objects>
+                <viewController storyboardIdentifier="parkingDetail" id="pwF-iQ-pEm" customClass="ParkingDetailsViewController" customModule="JustTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h5f-zR-vah"/>
+                        <viewControllerLayoutGuide type="bottom" id="OTF-U9-iX8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rb0-65-oIB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reG-HZ-gGp">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-fB-mmL">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3r-oc-spC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9bX-W4-DvY"/>
+                                    <constraint firstAttribute="height" constant="50" id="Gk8-s2-sbm"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="walkIcon"/>
+                                <connections>
+                                    <action selector="getWalkingDirections:" destination="pwF-iQ-pEm" eventType="touchUpInside" id="0zy-Ct-asA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-V8-sAd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk me there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-3h-lam">
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGp-pq-5cM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="LHE-kb-hbg"/>
+                                    <constraint firstAttribute="width" constant="25" id="eby-7j-jsa"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="closeDetails:" destination="pwF-iQ-pEm" eventType="touchUpInside" id="7j4-00-bzM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="99" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUb-ex-EOl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Y3r-oc-spC" firstAttribute="top" secondItem="h5f-zR-vah" secondAttribute="bottom" constant="32" id="1UL-rS-5RW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LGp-pq-5cM" secondAttribute="trailing" id="397-ya-ad0"/>
+                            <constraint firstItem="CsS-V8-sAd" firstAttribute="top" secondItem="vtf-fB-mmL" secondAttribute="bottom" constant="8" id="4sz-ak-tX7"/>
+                            <constraint firstItem="vtf-fB-mmL" firstAttribute="top" secondItem="reG-HZ-gGp" secondAttribute="bottom" constant="8" id="7gx-1Z-XuD"/>
+                            <constraint firstItem="Y3r-oc-spC" firstAttribute="leading" secondItem="vtf-fB-mmL" secondAttribute="trailing" constant="17" id="8fQ-ga-Mz5"/>
+                            <constraint firstItem="Y3r-oc-spC" firstAttribute="leading" secondItem="reG-HZ-gGp" secondAttribute="trailing" constant="-13" id="B2x-QE-S5N"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CsS-V8-sAd" secondAttribute="leading" constant="5" id="Bds-LW-P3e"/>
+                            <constraint firstItem="LGp-pq-5cM" firstAttribute="top" secondItem="h5f-zR-vah" secondAttribute="bottom" id="D0g-dL-39C"/>
+                            <constraint firstItem="LUb-ex-EOl" firstAttribute="leading" secondItem="Rb0-65-oIB" secondAttribute="leadingMargin" constant="-5" id="EEB-ak-72h"/>
+                            <constraint firstItem="y8Y-3h-lam" firstAttribute="centerX" secondItem="Y3r-oc-spC" secondAttribute="centerX" id="OS9-vt-dRx"/>
+                            <constraint firstItem="y8Y-3h-lam" firstAttribute="top" secondItem="h5f-zR-vah" secondAttribute="bottom" constant="80" id="Pb2-08-rVY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LUb-ex-EOl" secondAttribute="trailing" constant="-4" id="Seh-db-MPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y3r-oc-spC" secondAttribute="trailing" constant="-4" id="XCI-0Y-r4e"/>
+                            <constraint firstItem="Y3r-oc-spC" firstAttribute="leading" secondItem="CsS-V8-sAd" secondAttribute="trailing" constant="17" id="gDe-I7-cYJ"/>
+                            <constraint firstItem="reG-HZ-gGp" firstAttribute="top" secondItem="h5f-zR-vah" secondAttribute="bottom" id="lmt-bI-5CX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vtf-fB-mmL" secondAttribute="leading" constant="5" id="psQ-MM-pgi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="reG-HZ-gGp" secondAttribute="leading" constant="5" id="qaa-Tu-bZq"/>
+                            <constraint firstItem="LUb-ex-EOl" firstAttribute="top" secondItem="CsS-V8-sAd" secondAttribute="bottom" constant="20" id="x3T-b6-hgG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="directionsButton" destination="Y3r-oc-spC" id="v8c-ap-Lgc"/>
+                        <outlet property="directionsLabel" destination="LUb-ex-EOl" id="5tx-Mk-4Kb"/>
+                        <outlet property="fareParkingLabel" destination="vtf-fB-mmL" id="ORW-uL-Wsr"/>
+                        <outlet property="reviewParkingLabel" destination="CsS-V8-sAd" id="clr-6k-Wnw"/>
+                        <outlet property="titleParkingLabel" destination="reG-HZ-gGp" id="Ltm-HS-lQf"/>
+                        <outlet property="walkMeThereLabel" destination="y8Y-3h-lam" id="j7Y-me-Er8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WpJ-o7-KMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="136.28185907046478"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="48" height="48"/>
+        <image name="walkIcon" width="48" height="48"/>
+    </resources>
+</document>
